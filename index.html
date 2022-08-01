@@ -25,45 +25,54 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <h1>Weather Forecast</h1>
-        <h2>New York, NY</h2>
-        <ul class="timeamp-current-condition">
-          <div>
-            <li class="timestamp">Friday 5:00 PM</li>
-            <li class="current-temperature-condition">Clear</li>
-          </div>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <img
-              src="https://help.apple.com/assets/6222428998C2CE34C75A5252/6222428B98C2CE34C75A5267/en_US/35c778528f79f2aa038b07526447f606.png"
-              alt="Clear Icon"
-              class="weather-icon"
-            />
-            84°F | °C
-          </div>
-          <div class="col-6">
-            <ul class="current-conditions">
-              <li>Precipitation: 0%</li>
-              <li>Humidity: 50%</li>
-              <li>Wind: mph</li>
-              <li>High: 90°F</li>
-              <li>Low: 80°F</li>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <div class="overview">
+            <h1>Weather Forecast</h1>
+            <h2>New York, NY</h2>
+            <ul class="timeamp-current-condition">
+              <div>
+                <li class="timestamp">Friday 5:00 PM</li>
+                <li class="current-temperature-condition">Clear</li>
+              </div>
             </ul>
           </div>
-          <small>
-            <a
-              href="https://github.com/krhuber/weather-app-final-project"
-              target="_blank"
-            >
-              Open Source Code
-            </a>
-            by Kathryn Huber
-          </small>
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix weather-temperature">
+                <img
+                  src="https://help.apple.com/assets/6222428998C2CE34C75A5252/6222428B98C2CE34C75A5267/en_US/35c778528f79f2aa038b07526447f606.png"
+                  alt="Clear Icon"
+                  class="float-left weather-icon"
+                />
+                <div class="float-left">
+                  <strong>84</strong
+                  ><span class="units">°F | <a href="#">°C</a></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul class="current-conditions">
+                <li>Precipitation: 0%</li>
+                <li>Humidity: 50%</li>
+                <li>Wind: mph</li>
+                <li>High: 90°F</li>
+                <li>Low: 80°F</li>
+              </ul>
+            </div>
+          </div>
         </div>
+        <small>
+          <a
+            href="https://github.com/krhuber/weather-app-final-project"
+            target="_blank"
+          >
+            Open Source Code
+          </a>
+          by Kathryn Huber
+        </small>
       </div>
-      <script src="src/index.js"></script>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>

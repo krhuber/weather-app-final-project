@@ -25,19 +25,35 @@ li {
   padding: 0;
   font-size: 16px;
 }
-.weather-app {
+.weather-app-wrapper {
   max-width: 700px;
   margin: 30px auto;
+}
+.weather-app {
   padding: 20px;
   border: 2px solid #006ec5;
   border-radius: 10px;
 }
-.timeamp-current-condition {
+.overview {
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
-.weather-icon {
+
+.weather-temperature img {
   margin-left: 50px;
+  height: 64px;
+  width: 64px;
+}
+.weather-temperature strong {
+  color: #202124;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 64px;
+}
+.weather-temperature .units {
+  position: relative;
+  font-size: 16px;
+  top: -20px;
 }
 .current-conditions {
   margin-left: 125px;
