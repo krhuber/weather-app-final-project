@@ -18,7 +18,6 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-
     <!--MY CSS Style Sheet-->
     <link rel="stylesheet" href="src/style.css" />
     <!--MY CSS Style Sheet-->
@@ -29,20 +28,23 @@
       <div class="weather-app">
         <h1>Weather Forecast</h1>
         <h2>New York, NY</h2>
-        <ul>
-          <li>Friday 05:00 PM</li>
-          <li>Clear</li>
+        <ul class="timeamp-current-condition">
+          <div>
+            <li class="timestamp">Friday 5:00 PM</li>
+            <li class="current-temperature-condition">Clear</li>
+          </div>
         </ul>
         <div class="row">
           <div class="col-6">
             <img
               src="https://help.apple.com/assets/6222428998C2CE34C75A5252/6222428B98C2CE34C75A5267/en_US/35c778528f79f2aa038b07526447f606.png"
               alt="Clear Icon"
+              class="weather-icon"
             />
             84°F | °C
           </div>
           <div class="col-6">
-            <ul>
+            <ul class="current-conditions">
               <li>Precipitation: 0%</li>
               <li>Humidity: 50%</li>
               <li>Wind: mph</li>
