@@ -23,6 +23,7 @@ li {
   color: #006ec5;
   margin: 0;
   padding: 0;
+
   font-size: 16px;
 }
 .weather-app-wrapper {
@@ -37,10 +38,14 @@ li {
 .overview {
   text-align: center;
   margin-bottom: 20px;
+  text-transform: capitalize;
 }
 .current-weather {
   text-align: center;
 }
+/*.current-conditions {
+  text-align: left;
+}*/
 
 .weather-temperature img {
   height: 64px;
