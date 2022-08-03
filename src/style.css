@@ -88,6 +88,8 @@ li {
 .daily-forecast {
   color: #006ec5;
   font-size: 35px;
+  display: block;
+  margin: 0 auto;
   text-align: center;
 }
 

@@ -22,6 +22,36 @@ function formatDate(timestamp) {
   return `${day} - `;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Wed", "Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `  
+    <div class="col-2">
+      <div class="weather-forecast-date">${day}</div>
+      <img 
+        src="icons/01d.png" alt="" width = 40px
+      />
+      <div class="weather-forecast-temperature">
+        <span class="weather-temperature-max">
+          90° 
+        </span>
+          |
+        <span class="weather-temperature-min">
+          80°
+        </span>
+      </div>
+    </div>
+        `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //function to show timestap next to current day of the week
 function formatTimestamp(timestamp) {
   let date = new Date(timestamp);
@@ -74,7 +104,8 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-search("New York");
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+search("New York");
+displayForecast();
