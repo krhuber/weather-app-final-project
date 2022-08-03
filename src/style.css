@@ -66,9 +66,11 @@ li {
   text-align: center;
 }
 
-/*.current-conditions {
+.current-conditions {
   text-align: left;
-}*/
+  position: relative;
+  right: -80px;
+}
 
 .weather-temperature img {
   height: 64px;

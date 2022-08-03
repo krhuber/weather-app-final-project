@@ -22,31 +22,43 @@ function formatDate(timestamp) {
   return `${day} - `;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
   let days = ["Wed", "Thu", "Fri", "Sat"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `  
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `  
     <div class="col-2">
-      <div class="weather-forecast-date">${day}</div>
+      <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+     
       <img 
-        src="icons/01d.png" alt="" width = 40px
+        src="icons/${forecastDay.weather[0].icon}.png" alt="" width = 40px
       />
       <div class="weather-forecast-temperature">
         <span class="weather-temperature-max">
-          90° 
+          ${Math.round(forecastDay.temp.max)}° 
         </span>
           |
         <span class="weather-temperature-min">
-          80°
+          ${Math.round(forecastDay.temp.min)}°
         </span>
       </div>
     </div>
         `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -81,8 +93,7 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let timestampElement = document.querySelector("#timestamp");
-  let tempMaxElement = document.querySelector("#temp-max");
-  let tempMinElement = document.querySelector("#temp-min");
+  let feelsLikeTemp = document.querySelector("#feels-like");
   let iconElement = document.querySelector("#icon");
   let iconElementApi = response.data.weather[0].icon;
 
@@ -91,8 +102,7 @@ function displayTemperature(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  tempMaxElement.innerHTML = Math.round(response.data.main.temp_max);
-  tempMinElement.innerHTML = Math.round(response.data.main.temp_min);
+  feelsLikeTemp.innerHTML = Math.round(response.data.main.feels_like);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   timestampElement.innerHTML = formatTimestamp(response.data.dt * 1000);
   iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
